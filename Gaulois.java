@@ -27,20 +27,12 @@ public class Gaulois {
 		romain.recevoirCoup(force / 3);
 	}
 	
-<<<<<<< HEAD
 	@Override
-=======
-//	@Override
->>>>>>> 06c109d1fb94c58ea1954424f88f110265c4a274
 //	public String toString() {
 //		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion="+ effetPotion + "]";
 //	}
 	
 	public static void main(String[] args) {
-<<<<<<< HEAD
 		eeee
-=======
-		
->>>>>>> 06c109d1fb94c58ea1954424f88f110265c4a274
 	}
 }
