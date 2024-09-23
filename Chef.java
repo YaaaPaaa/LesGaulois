@@ -1,16 +1,13 @@
-package personnages;
+package Personnages;
 
-public class Chef {
+public class Romain {
 	private String nom;
 	private int force;
-	private Village village;
 	
-	public Chef(String nom, int force, Village village) {
+	public Romain(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
-		this.village = village;
 	}
-	
 	public String getNom() {
 		return nom;
 	}
@@ -18,13 +15,18 @@ public class Chef {
 	public void parler(String texte) {
 		System.out.println(prendreParole() + "« " + texte + "»");
 	}
-	
+
 	private String prendreParole() {
-		return "Le chef " + nom + " du village " + village.getNom() + " : ";
+		return "Le rolain " + nom + " : ";
 	}
 	
-	public void frapper(Romain romain) {
-		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
-		romain.recevoirCoup(force / 3);
+	public void recevoirCoup(int forceCoup) {
+		force -= forceCoup;
+		if (force > 0) {
+			parler("Aïe");
+		} else {
+		parler("J'abandonne...");
+		}
+		
 	}
 }

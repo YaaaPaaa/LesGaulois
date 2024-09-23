@@ -1,4 +1,4 @@
-package personnages;
+package Personnages;
 
 public class Druide {
 	private String nom;
