@@ -1,4 +1,4 @@
-package Personnages;
+package personnages;
 
 public class Romain {
 	private String nom;
@@ -16,8 +16,8 @@ public class Romain {
 		System.out.println(prendreParole() + "« " + texte + "»");
 	}
 
-	private String prendreParole() {
-		return "Le rolain " + nom + " : ";
+	public String prendreParole() {
+		return "Le romain " + nom + " : ";
 	}
 	
 	public void recevoirCoup(int forceCoup) {
@@ -27,6 +27,22 @@ public class Romain {
 		} else {
 		parler("J'abandonne...");
 		}
+	}
+	
+	public static void main(String[] args) {
+		//Création de l'objet César
+		Romain minus = new Romain ("Minus", 8);
 		
+		//Vérification de la méthode prendreParole
+		minus.prendreParole();
+		
+		//Vérification de la méthode parler
+		minus.parler("Je suis César !");
+		
+		//Vérification de la méthode recevoirCoup
+		minus.recevoirCoup(2);
 	}
 }
+	
+	
+	

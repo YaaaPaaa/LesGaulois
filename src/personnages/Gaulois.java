@@ -1,4 +1,4 @@
-package Personnages;
+package personnages;
 
 public class Gaulois {
 	private String nom;
@@ -18,7 +18,7 @@ public class Gaulois {
 		System.out.println(prendreParole() + "« " + texte + "»");
 	}
 	
-	private String prendreParole() {
+	public String prendreParole() {
 		return "Le gaulois " + nom + " : ";
 	}
 	
@@ -33,8 +33,19 @@ public class Gaulois {
 	}
 	
 	public static void main(String[] args) {
+		//Création de l'objet Astérix
 		Gaulois asterix = new Gaulois ("Astérix", 8);
 		System.out.println(asterix.getNom());
 		System.out.println(asterix);
+		
+		//Vérification de la méthode prendreParole
+		asterix.prendreParole();
+		
+		//Vérification de la méthode parler
+		asterix.parler("Je suis Astérix !");
+		
+		//Création d'un objet romain et vérification de la méthode frapper 
+		Romain cesar = new Romain("César", 2);
+		asterix.frapper(cesar);
 	}
 }

@@ -1,4 +1,4 @@
-package Lieux;
+package lieux;
 
 public class Village {
 	private String nom;
