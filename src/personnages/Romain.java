@@ -1,5 +1,9 @@
 package personnages;
 
+import java.time.chrono.IsoChronology;
+
+import javax.swing.text.html.HTMLDocument.HTMLReader.IsindexAction;
+
 public class Romain {
 	private String nom;
 	private int force;
@@ -21,14 +25,25 @@ public class Romain {
 	}
 	
 	public void recevoirCoup(int forceCoup) {
+		int forceDepart = force;
 		force -= forceCoup;
+		assert isForcePositive() : "la force d'un coup reçu est positive"; //TP2 Partie sur l'invariant
 		if (force > 0) {
 			parler("Aïe");
 		} else {
-		parler("J'abandonne...");
+			parler("J'abandonne...");
 		}
+		assert isForceDiminue(force, forceDepart) : "la force d'un Romain a diminué";
 	}
 	
+	private boolean isForcePositive() {
+			return 0 <= force;
+	}
+	
+	private boolean isForceDiminue(int force1, int force2) {
+		return force1<force2;
+}
+			
 	public static void main(String[] args) {
 		//Création de l'objet César
 		Romain minus = new Romain ("Minus", 6);
