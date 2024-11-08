@@ -1,12 +1,10 @@
 package personnages;
 
-import java.time.chrono.IsoChronology;
-
-import javax.swing.text.html.HTMLDocument.HTMLReader.IsindexAction;
-
 public class Romain {
 	private String nom;
 	private int force;
+	private Equipement[] equipements = new Equipement[2];
+	private int nbEquipement = 0;
 	
 	public Romain(String nom, int force) {
 		this.nom = nom;
@@ -42,7 +40,36 @@ public class Romain {
 	
 	private boolean isForceDiminue(int force1, int force2) {
 		return force1<force2;
-}
+		}
+	
+	private void sEquiper(Equipement aEquiper) {
+		switch (nbEquipement) {
+		case 2: {
+			System.out.println("Le soldat " + nom + " est déjà bien protégé");
+			break;
+		}
+		case 1: {
+			if(equipements[0] == aEquiper) {
+				System.out.println("Le soldat " + nom + " possède déjà un " + aEquiper);
+			} else {
+				ajouterEquipement(aEquiper);
+			}
+			break;
+		}
+		case 0: {
+			ajouterEquipement(aEquiper);	
+			break;
+		}
+		default:
+			throw new IllegalArgumentException("Unexpected value: ");
+		}
+	}
+	
+	private void ajouterEquipement(Equipement equipement) { 
+		equipements[nbEquipement] = equipement;
+		nbEquipement++;
+		System.out.println("Le soldat " + nom + " s’équipe avec un " + equipement.toString() + ".");
+		}
 			
 	public static void main(String[] args) {
 		//Création de l'objet César
@@ -56,6 +83,17 @@ public class Romain {
 		
 		//Vérification de la méthode recevoirCoup
 		minus.recevoirCoup(2);
+		
+		//TP2 : 2)Des Romains bien protégés a)
+		System.out.println("Les équipements sont :");
+		for(Equipement equipement: Equipement.values()) {
+			System.out.println("- " + equipement);
+		}
+		
+		minus.sEquiper(Equipement.CASQUE);
+		minus.sEquiper(Equipement.CASQUE);
+		minus.sEquiper(Equipement.BOUCLIER);
+		minus.sEquiper(Equipement.CASQUE);
 	}
 }
 	
