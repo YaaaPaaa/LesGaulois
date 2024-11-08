@@ -31,7 +31,7 @@ public class Romain {
 	
 	public static void main(String[] args) {
 		//Création de l'objet César
-		Romain minus = new Romain ("Minus", 8);
+		Romain minus = new Romain ("Minus", 6);
 		
 		//Vérification de la méthode prendreParole
 		minus.prendreParole();
