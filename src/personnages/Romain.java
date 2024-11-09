@@ -14,6 +14,10 @@ public class Romain {
 		return nom;
 	}
 	
+	public int getForce() {
+		return force;
+	}
+	
 	public void parler(String texte) {
 		System.out.println(prendreParole() + "« " + texte + "»");
 	}
@@ -79,7 +83,7 @@ public class Romain {
 		return force1<force2;
 		}
 	
-	private void sEquiper(Equipement aEquiper) {
+	public void sEquiper(Equipement aEquiper) {
 		switch (nbEquipement) {
 		case 2: {
 			System.out.println("Le soldat " + nom + " est déjà bien protégé");
@@ -133,6 +137,5 @@ public class Romain {
 		minus.sEquiper(Equipement.CASQUE);
 	}
 }
-	
 	
 	
